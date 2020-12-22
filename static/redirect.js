@@ -4,6 +4,9 @@ function baseHost(hostname) {
 }
 
 function shouldRedirect() {
+  if (window.location.hostname === "live.motosumo.com") {
+    return true;
+  }
   base = baseHost(window.location.hostname);
   console.log(base);
   let live_domains = [
@@ -16,5 +19,5 @@ function shouldRedirect() {
 }
 
 if (shouldRedirect()) {
-  window.location.hostname = "live.motosumo.com";
+  window.location.hostname = "www.motosumo.com";
 }
